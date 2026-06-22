@@ -1,0 +1,34 @@
+{
+  "Summary": {
+    "CveCount": 0,
+    "BySeverity": {
+      "optional": 0,
+      "mandatory": 0,
+      "potential": 1
+    },
+    "RulesPassed": 58,
+    "CweCount": 1,
+    "TotalFindings": 1,
+    "ByCategory": {
+      "Code Quality": 1
+    },
+    "TotalRulesAssessed": 59
+  },
+  "GeneratedAt": "2026-06-22T10:02:41.0000000Z",
+  "CweFindings": [
+    {
+      "Files": [
+        "Products/Controllers/ProductsController.cs"
+      ],
+      "Name": "Data Access Operations Outside of Expected Data Manager Component",
+      "Category": "Code Quality",
+      "Severity": "potential",
+      "Id": "CWE-1057",
+      "Description": "The product uses a dedicated, central data manager component as required by design, but it contains code that performs data-access operations that do not use this data manager.",
+      "StoryPoint": 5,
+      "Explanation": "In ProductsController.cs, the product data (_products list) is declared and accessed directly inside the controller class (lines 11-15), bypassing any dedicated data manager or repository component. The project is named 'CleanArchitectureAspNetMvc5', implying a clean architecture design where data access should be delegated to a separate data layer. Instead, data initialization and retrieval logic are embedded directly in the controller, violating the expected separation of concerns."
+    }
+  ],
+  "CveFindings": [],
+  "ProjectPath": "."
+}
